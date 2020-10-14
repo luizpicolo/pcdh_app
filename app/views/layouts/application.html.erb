@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PcdhApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper grey darken-3">
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <a href="#" class="brand-logo" style="padding-left: 20px;"><%= @title %></a>
+      </div>
+    </nav>
+    <ul id="slide-out" class="sidenav sidenav-fixed grey lighten-4">
+      <li>
+        <div class="user-view">
+          <a href="#user"><img class="circle" src='<%= current_user.avatar %>'/></a>
+          <span class="name"><%= current_user.name %></span>
+          <span class="email"><%= current_user.email %></span>
+        </div>
+      </li>
+      <li><div class="divider"></div></li>
+      <li><a href="/"><i class="material-icons">insert_chart</i>Página Inicial</a></li>
+      <!-- <li><div class="divider"></div></li> -->
+      <li><a href="/greenhouses"><i class="material-icons">insert_chart</i>Estufa</a></li>
+      <!-- <li><div class="divider"></div></li> -->
+      <li><a href="#"><i class="material-icons">description</i>Micro-Clima</a></li>
+      <!-- <li><div class="divider"></div></li> -->
+      <li>
+      <%= link_to destroy_user_session_path, :method => :delete do %>
+        <i class="material-icons">date_range</i>Sair
+      <% end %>
+      </li>
+      <!-- <li><div class="divider"></div></li> -->
+    </ul>
+    <main>
+      <%= render "layouts/alerts" %>
+      <%= yield %>
+    </main>
+  </body>
+</html>
+
+

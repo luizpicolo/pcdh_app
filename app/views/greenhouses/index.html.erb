@@ -1,0 +1,25 @@
+<div class="" style="padding-left: 1px;">
+  <div class="row">
+    <% @greenhouses.each do |greenhouse| %>
+      <%= link_to hydroponics_path(greenhouse_id: greenhouse.id) do %>
+        <div class="col hydroponic s12 m6 l3 teal darken-2">
+          <span class="flow-text"><%= greenhouse.identifier %></span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<a href="#modal1" class="modal-trigger btn-floating btn-large waves-effect teal darken-2 fixed-button">
+  <i class="material-icons">add</i>
+</a>
+
+
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>

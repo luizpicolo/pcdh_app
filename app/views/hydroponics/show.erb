@@ -1,0 +1,10 @@
+<div class="" style="padding-left: 1px;">
+  <div class="row">
+    <% @data.each do |data| %>
+      <div class="col hydroponic s12 m6 l6 white container_data">
+        <h5><%= data.first[:name] %></h5>   
+        <%= line_chart data %>
+      </div>
+    <% end %>
+  </div>
+</div>
